@@ -1,5 +1,12 @@
-# Make vim the default editor.
-export EDITOR='vim';
+######################################################
+# EXPORT OPTIONS
+######################################################
+
+# Grep color
+export GREP_COLOR='1;31' # green for matches
+
+# CLI color
+export CLICOLOR=230
 
 # Enable persistent REPL history for `node`.
 NODE_REPL_HISTORY_FILE=~/.node_history;
@@ -13,7 +20,9 @@ export HISTFILESIZE="${HISTSIZE}";
 export HISTCONTROL='ignoreboth';
 
 # Prefer US English and use UTF-8.
-export LANG='en_US.UTF-8';
+if [[ -z "$LANG" ]]; then
+  export LANG='en_US.UTF-8'
+fi
 export LC_ALL='en_US.UTF-8';
 
 # Highlight section titles in manual pages.
