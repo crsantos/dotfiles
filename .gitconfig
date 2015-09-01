@@ -1,4 +1,22 @@
+[user]
+
+	name = Carlos Ricardo Santos
+	
+	email = carlosricardosantos@gmail.com
+
 [alias]
+
+	st = status
+	  
+	ci = commit
+	
+	br = branch
+	
+	co = checkout
+	
+	df = diff
+	
+	lg = log -p
 
 	# View abbreviated SHA, description, and history graph of the latest 20 commits
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit
