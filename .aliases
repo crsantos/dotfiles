@@ -10,7 +10,7 @@ alias -- -="cd -"
 alias d="cd ~/Documents/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
-alias p="cd ~/projects"
+alias dev="cd ~/dev"
 alias g="git"
 alias h="history"
 alias j="jobs"
@@ -51,9 +51,6 @@ alias update='sudo softwareupdate -i -a; brew update; brew upgrade --all; brew c
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
-
-# Flush Directory Service cache
-alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
 
 # Clean up LaunchServices to remove duplicates in the “Open With” menu
 alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
@@ -139,3 +136,61 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
+
+# ZSH
+alias zshconfig="subl ~/.zshrc"
+
+######################################################
+# PERSONAL ALIASES
+######################################################
+
+alias home='cd ~'
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+# -> Prevents accidentally clobbering files.
+alias mkdir='mkdir -p'
+
+alias h='history'
+alias j='jobs -l'
+alias which='type -a'
+alias ..='cd ..'
+
+# Pretty-print of some PATH variables:
+alias path='echo -e ${PATH//:/\\n}'
+alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
+
+
+alias du='du -kh'    # Makes a more readable output.
+alias df='df -kTh'
+
+alias ax='chmod a+x'
+
+alias s="subl"
+
+alias c='clear'
+
+alias rmpod='rm -rf Pods Podfile.lock && bundle exec pod install'
+
+alias rebundle="bundle install && bundle exec pod install"
+
+alias ded='rm -rf ~/library/Developer/Xcode/DerivedData/*'
+
+# Subliminal
+
+alias sub='subliminal -l pt -l pt-br -l en  -c /tmp/subliminal.cache --'
+
+# Codesigning
+
+alias identities='security find-identity -v -p codesigning'
+alias provinspect='security cms -D -i' # filepath
+
+# Skype
+alias skype="sudo /Applications/Skype.app/Contents/MacOS/Skype /secondary"
+
+# Firefox
+alias firefox="/Applications/Firefox.app/Contents/MacOS/firefox"
+
+# Chrome
+alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
