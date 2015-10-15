@@ -167,6 +167,8 @@ alias df='df -kTh'
 
 alias ax='chmod a+x'
 
+alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
+
 alias s="subl"
 
 alias c='clear'
@@ -176,6 +178,10 @@ alias rmpod='rm -rf Pods Podfile.lock && bundle exec pod install'
 alias rebundle="bundle install && bundle exec pod install"
 
 alias ded='rm -rf ~/library/Developer/Xcode/DerivedData/*'
+
+alias simulators="~/Library/Developer/CoreSimulator/Devices/"
+
+alias protostuff="mkdir src && protoc --plugin=/usr/local/bin/protoc-gen-objc --proto_path=./ ./*.proto --objc_out=\"./src\""
 
 # Subliminal
 
