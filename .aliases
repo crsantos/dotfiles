@@ -187,13 +187,17 @@ alias protostuff="mkdir src && protoc --plugin=/usr/local/bin/protoc-gen-objc --
 
 alias sub='subliminal -l pt -l pt-br -l en  -c /tmp/subliminal.cache --'
 
+# Repair Xcode Plugin UUID
+alias repairuuid="~/scripts/repairuuid"
+
 # Codesigning
 
 alias identities='security find-identity -v -p codesigning'
 alias provinspect='security cms -D -i' # filepath
 
 # Skype
-alias skype="sudo /Applications/Skype.app/Contents/MacOS/Skype /secondary"
+#alias skype="sudo /Applications/Skype.app/Contents/MacOS/Skype /secondary"
+alias skype="sudo ~/Applications/Skype.app/Contents/MacOS/Skype /secondary"
 
 # Firefox
 alias firefox="/Applications/Firefox.app/Contents/MacOS/firefox"
