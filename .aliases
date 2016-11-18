@@ -7,7 +7,7 @@ alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
 # Shortcuts
-alias d="cd ~/Documents/Dropbox"
+alias d="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias dev="cd ~/dev"
@@ -196,10 +196,29 @@ alias provinspect='security cms -D -i' # filepath
 
 # Skype
 #alias skype="sudo /Applications/Skype.app/Contents/MacOS/Skype /secondary"
-alias skype="sudo ~/Applications/Skype.app/Contents/MacOS/Skype /secondary"
+alias skype="sudo /Applications/Skype.app/Contents/MacOS/Skype /secondary"
 
 # Firefox
 alias firefox="/Applications/Firefox.app/Contents/MacOS/firefox"
 
 # Chrome
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
+
+# Xcode via @orta
+openx(){ 
+  if test -n "$(find . -maxdepth 1 -name '*.xcworkspace' -print -quit)"
+  then
+    echo "Opening workspace"
+    open *.xcworkspace
+    return
+  else
+    if test -n "$(find . -maxdepth 1 -name '*.xcodeproj' -print -quit)"
+    then
+      echo "Opening project"
+      open *.xcodeproj
+      return  
+    else
+      echo "Nothing found"
+    fi
+  fi
+}
