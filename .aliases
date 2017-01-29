@@ -174,9 +174,11 @@ alias s="subl"
 
 alias c='clear'
 
-alias rmpod='rm -rf Pods Podfile.lock && bundle exec pod update'
+alias rmpod='rm -rf Pods Podfile.lock && bundle exec pod install'
 
-alias rebundle="bundle install && bundle exec pod update"
+alias podi='bundle exec pod install'
+
+alias rebundle="bundle install && bundle exec pod install"
 
 alias ded='rm -rf ~/library/Developer/Xcode/DerivedData/*'
 
