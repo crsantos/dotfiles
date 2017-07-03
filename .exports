@@ -33,3 +33,10 @@ export MANPAGER='less -X';
 
 # Always enable colored `grep` output.
 export GREP_OPTIONS='--color=auto';
+
+# Does the hosts file exist and is distcc in the path?
+if test -f ~/.distcc/hosts && type -p distcc >/dev/null 2>&1
+then
+  # Tell ccache to prefix calls to the compiler with 'distcc'
+  export CCACHE_PREFIX="distcc"
+fi

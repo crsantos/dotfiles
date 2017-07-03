@@ -184,6 +184,8 @@ alias ded='rm -rf ~/library/Developer/Xcode/DerivedData/*'
 
 alias simulators="~/Library/Developer/CoreSimulator/Devices/"
 
+alias simurl="xcrun simctl openurl"
+
 # Subliminal
 
 alias sub='subliminal -l pt -l pt-br -l en  -c /tmp/subliminal.cache --'
