@@ -10,4 +10,4 @@ if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
-export PERL5LIB=/Users/carlossantos/perl5/lib/perl5
+export PERL5LIB=/Users/ricardo.santos/perl5/lib/perl5
