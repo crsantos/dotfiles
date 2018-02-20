@@ -27,8 +27,8 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 
 export GPG_TTY=$(tty)
-export NVM_DIR="~/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 source  ~/powerlevel9k/powerlevel9k.zsh-theme
 
