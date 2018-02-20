@@ -5,6 +5,8 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
+POWERLEVEL9K_INSTALLATION_PATH=~/powerlevel9k
+
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -22,9 +24,10 @@ unset file;
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 
-
-export NVM_DIR="/Users/csantos/.nvm"
+export GPG_TTY=$(tty)
+export NVM_DIR="~/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 source  ~/powerlevel9k/powerlevel9k.zsh-theme
