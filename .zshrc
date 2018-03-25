@@ -27,8 +27,8 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 
 export GPG_TTY=$(tty)
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 source  ~/powerlevel9k/powerlevel9k.zsh-theme
 
@@ -41,7 +41,7 @@ POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="↱"
 POWERLEVEL9K_MULTILINE_SECOND_PROMPT_PREFIX="↳ "
 POWERLEVEL9K_TIME_FOREGROUND='black'
-POWERLEVEL9K_TIME_BACKGROUND='white'
+POWERLEVEL9K_TIME_BACKGROUND='gray'
 
 # Segment in black and white
 POWERLEVEL9K_LOAD_CRITICAL_BACKGROUND="black"

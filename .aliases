@@ -226,3 +226,6 @@ openx(){
     fi
   fi
 }
+
+# Cache cleaner
+alias cleancache="brew cleanup && gem cleanup && yarn cache clean && npm cache clean -f && ded"
