@@ -174,20 +174,6 @@ alias s="subl"
 
 alias c='clear'
 
-alias rmpod='rm -rf Pods Podfile.lock && bundle exec pod install'
-
-alias podi='bundle exec pod install'
-
-alias rebundle="bundle install && bundle exec pod install"
-
-alias ded='rm -rf ~/library/Developer/Xcode/DerivedData/*'
-
-alias simulators="~/Library/Developer/CoreSimulator/Devices/"
-
-alias simurl="xcrun simctl openurl"
-
-alias simfix="killall -9 -v com.apple.CoreSimulator.CoreSimulatorService"
-
 # Subliminal
 
 alias sub='subliminal -l pt -l pt-br -l en  -c /tmp/subliminal.cache --'
@@ -233,8 +219,23 @@ openx(){
 alias cleancache="brew cleanup && gem cleanup && yarn cache clean && npm cache clean -f && ded"
 
 # Cocoapods
-podlint() { pod lib lint "$@".podspec --private --no-clean --verbose --allow-warnings --sources='git@github.com:Farfetch/Specs.git,https://github.com/CocoaPods/Specs'; }
-podrepopush() { pod repo push farfetch "$@".podspec --private --allow-warnings }
+podlint() { bundle exec pod lib lint "$@".podspec --private --no-clean --verbose --allow-warnings --sources='git@github.com:Farfetch/Specs.git,https://github.com/CocoaPods/Specs'; }
+podrepopush() { bundle exec pod repo push farfetch "$@".podspec --private --allow-warnings }
+podupdi() { bundle exec pod update "$@".podspec && bundle exec pod install }
+
+alias rmpod='rm -rf Pods Podfile.lock && bundle exec pod install'
+
+alias podi='bundle exec pod install'
+
+alias rebundle="bundle install && bundle exec pod install"
+
+alias ded='rm -rf ~/library/Developer/Xcode/DerivedData/*'
+
+alias simulators="~/Library/Developer/CoreSimulator/Devices/"
+
+alias simurl="xcrun simctl openurl"
+
+alias simfix="killall -9 -v com.apple.CoreSimulator.CoreSimulatorService"
 
 # shasum
 shax() { echo -n "$1" | shasum -a $2 }
