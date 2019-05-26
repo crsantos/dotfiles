@@ -3,8 +3,13 @@
 # git pull origin master;
 
 function syncFishFolder() {
-	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
-		--exclude "README.md" --exclude "LICENSE-MIT.txt" -avh --no-perms ./fish/ ~/.config/fish;
+	rsync --exclude ".git/" \
+	--exclude ".DS_Store" \
+	--exclude ".osx" \
+	--exclude "scripts" \
+	--exclude "README.md" \
+	--exclude "LICENSE-MIT.txt" \
+	-avh --no-perms ./fish/ ~/.config/fish;
 
 	# Reload fish shell after that
 	exec /usr/local/bin/fish -l;
