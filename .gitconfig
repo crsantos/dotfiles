@@ -1,6 +1,6 @@
 [user]
 
-	name = Carlos Ricardo Santos
+	name = Carlos Santos
 	
 	email = carlosricardosantos@gmail.com
 
@@ -8,7 +8,7 @@
 
 	st = status
 	  
-	ci = commit
+	ci = commit -v
 	
 	br = branch
 	
@@ -98,13 +98,13 @@
 [core]
 
 	# Use custom `.gitignore` and `.gitattributes`
-	excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore_global
 	attributesfile = ~/.gitattributes
 
 	# Treat spaces before tabs and all kinds of trailing whitespace as an error
 	# [default] trailing-space: looks for spaces at the end of a line
 	# [default] space-before-tab: looks for spaces before tabs at the beginning of a line
-	whitespace = space-before-tab,-indent-with-non-tab,trailing-space
+	whitespace = trailing-space,space-before-tab
 
 	# Make `git rebase` safer on OS X
 	# More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
@@ -113,6 +113,8 @@
 	# Prevent showing files whose names contain non-ASCII symbols as unversioned.
 	# http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
 	precomposeunicode = false
+	editor = code --wait
+	autocrlf = input
 
 [color]
 
@@ -163,9 +165,13 @@
 	# Use the Git 1.x.x default to avoid errors on machines with old Git
 	# installations. To use `simple` instead, add this to your `~/.extra` file:
 	# `git config --global push.default simple`. See http://git.io/mMah-w.
-	default = matching
+	default = current
 	# Make `git push` push relevant annotated tags when pushing branches out.
 	followTags = true
+
+[merge "mergepbx"]
+    name = Xcode project files merger
+    driver = mergepbx %O %A %B
 
 # URL shorthands
 
@@ -188,3 +194,6 @@
 [url "git://gist.github.com/"]
 
 	insteadOf = "gist:"
+
+[credential]
+	helper = osxkeychain
