@@ -862,36 +862,22 @@ defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
 defaults write org.m0k.transmission RandomPort -bool true
 
 ###############################################################################
-# Twitter.app                                                                 #
-###############################################################################
-
-# Disable smart quotes as it’s annoying for code tweets
-defaults write com.twitter.twitter-mac AutomaticQuoteSubstitutionEnabled -bool false
-
-# Show the app window when clicking the menu bar icon
-defaults write com.twitter.twitter-mac MenuItemBehavior -int 1
-
-# Enable the hidden ‘Develop’ menu
-defaults write com.twitter.twitter-mac ShowDevelopMenu -bool true
-
-# Open links in the background
-defaults write com.twitter.twitter-mac openLinksInBackground -bool true
-
-# Allow closing the ‘new tweet’ window by pressing `Esc`
-defaults write com.twitter.twitter-mac ESCClosesComposeWindow -bool true
-
-# Show full names rather than Twitter handles
-defaults write com.twitter.twitter-mac ShowFullNames -bool true
-
-# Hide the app in the background if it’s not the front-most window
-defaults write com.twitter.twitter-mac HideInBackground -bool true
-
-###############################################################################
 # Tweetbot.app                                                                #
 ###############################################################################
 
 # Bypass the annoyingly slow t.co URL shortener
-defaults write com.tapbots.TweetbotMac OpenURLsDirectly -bool true
+# defaults write com.tapbots.TweetbotMac OpenURLsDirectly -bool true
+defaults write com.tapbots.TweetbotMac openURLInBackground -bool true
+defaults write com.tapbots.TweetbotMac showStatusItem -bool false
+defaults write com.tapbots.TweetbotMac soundType -int 1
+defaults write com.tapbots.TweetbotMac statusViewImageType -int 2
+defaults write com.tapbots.TweetbotMac globalHideShowHotKey -dict \
+  chars -string "c" \
+  keyCode -int 8 \
+  modifierFlags -int 1310985
+# Setup a column on the right hand side with mentions
+defaults delete com.tapbots.TweetbotMac MainWindowColumnInfo || true
+defaults write com.tapbots.TweetbotMac MainWindowColumnInfo -array-add '{ "accountTID" = 7117732; "controllerClass" = "PTHTweetbotMentionsViewController"; "displayingMediaTimeline" = 0; }'
 
 ###############################################################################
 # Kill affected applications                                                  #
@@ -914,11 +900,9 @@ for app in "Activity Monitor" \
 	"SizeUp" \
 	"Spectacle" \
 	"SystemUIServer" \
-	"Terminal" \
+	"iTerm2" \
 	"Transmission" \
-	"Tweetbot" \
-	"Twitter" \
-	"iCal"; do
+	"Tweetbot"; do
 	killall "${app}" &> /dev/null
 done
 echo "Done. Note that some of these changes require a logout/restart to take effect."
