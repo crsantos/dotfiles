@@ -10,6 +10,14 @@ function syncFishFolder() {
 	exec /usr/local/bin/fish -l;
 }
 
+# TODO: use it
+function brewBundle() {
+
+	cd ~/
+	# Run bundle command with Brewfile
+	brew bundle
+}
+
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
 	syncFishFolder;
 else
