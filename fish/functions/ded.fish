@@ -1,4 +1,4 @@
 # Defined in - @ line 0
-function ded --description 'alias ded=rm -rf ~/library/Developer/Xcode/DerivedData/*'
-	rm -rf ~/library/Developer/Xcode/DerivedData/* $argv;
+function ded --description 'alias ded=rm -rf ~/Library/Developer/Xcode/DerivedData/*'
+	rm -rf ~/Library/Developer/Xcode/DerivedData/* $argv;
 end
