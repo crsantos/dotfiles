@@ -15,6 +15,19 @@ function syncFishFolder() {
 	exec /usr/local/bin/fish -l;
 }
 
+function copyIndividualConfigFiles() {
+
+	# asdf 
+	cp .asdfrc ~/
+	# git
+	cp .gitconfig ~/
+	cp .gitignore_global ~/
+	# ruby
+	cp .gemrc ~/
+
+	cp .curlrc ~/
+}
+
 # TODO: use it
 function brewBundle() {
 
@@ -30,6 +43,7 @@ else
 	echo "";
 	if [[ $REPLY =~ ^[Yy]$ ]]; then
 		syncFishFolder;
+		copyIndividualConfigFiles;
 	fi;
 fi;
 unset syncFishFolder;
