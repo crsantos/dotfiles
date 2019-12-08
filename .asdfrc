@@ -1,0 +1,3 @@
+# ruby plugin
+# - Fallback to the old .ruby-version file
+legacy_version_file = yes
