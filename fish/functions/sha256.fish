@@ -1,3 +1,3 @@
 function sha256
-	shax $argv[0] 256
+	shax $argv[1] 256
 end
