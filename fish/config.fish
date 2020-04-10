@@ -16,7 +16,7 @@
 source ~/.asdf/asdf.fish
 
 # Load asdf-java
-source ~/.asdf/plugins/java/set-java-home.fish
+sh ~/.asdf/plugins/java/asdf-java-wrapper.bash
 
 # Load SPM completions
 #sh ~/.swift-package-complete.bash
@@ -31,7 +31,9 @@ if test $TERM_PROGRAM = iTerm.app
     test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 end
 
-#set -U fish_key_bindings fish_vi_key_bindings #fish_default_key_bindings
+set JAVA_HOME ~/.asdf/installs/java/openjdk-11.0.1/Contents/Home/bin
+
+set -U fish_key_bindings fish_default_key_bindings #fish_vi_key_bindings
 
 # TODO: move to a different file
 # if not set LC_ALL
